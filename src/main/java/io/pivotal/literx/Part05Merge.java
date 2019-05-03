@@ -26,7 +26,7 @@ public class Part05Merge {
 //========================================================================================
 
 	Flux<User> createFluxFromMultipleMono(Mono<User> mono1, Mono<User> mono2) {
-		return mono1.concatWith(mono2);
+		return Flux.concat(mono1, mono2);
 	}
 
 }

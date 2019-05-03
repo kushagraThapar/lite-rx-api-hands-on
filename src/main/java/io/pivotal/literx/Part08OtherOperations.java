@@ -32,7 +32,7 @@ public class Part08OtherOperations {
 //========================================================================================
 
     Mono<Void> fluxCompletion(Flux<User> flux) {
-        return flux.thenEmpty(Mono.empty());
+        return flux.then();
     }
 
 //========================================================================================

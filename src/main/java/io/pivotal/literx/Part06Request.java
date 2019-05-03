@@ -38,16 +38,14 @@ public class Part06Request {
 //========================================================================================
 
     Flux<User> fluxWithLog() {
-        return Flux
-                .from(repository.findAll())
-                .log();
+        return repository.findAll().log();
     }
 
 //========================================================================================
 
     Flux<User> fluxWithDoOnPrintln() {
-        return Flux
-                .from(repository.findAll())
+        return repository
+                .findAll()
                 .doOnSubscribe(subscription -> System.out.println("Starring:"))
                 .doOnNext(user -> System.out.println(user.getFirstname() + " " + user.getLastname()))
                 .doOnComplete(() -> System.out.println("The end!"));

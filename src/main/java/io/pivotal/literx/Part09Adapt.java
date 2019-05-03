@@ -45,7 +45,7 @@ public class Part09Adapt {
 //========================================================================================
 
 	Flowable<User> fromFluxToFlowable(Flux<User> flux) {
-		return new FlowableFromPublisher<>(flux);
+		return Flowable.fromPublisher(flux);
 	}
 
 	Flux<User> fromFlowableToFlux(Flowable<User> flowable) {
@@ -55,7 +55,7 @@ public class Part09Adapt {
 //========================================================================================
 
 	Observable<User> fromFluxToObservable(Flux<User> flux) {
-		return new ObservableFromPublisher<>(flux);
+		return Observable.fromPublisher(flux);
 	}
 
 	Flux<User> fromObservableToFlux(Observable<User> observable) {

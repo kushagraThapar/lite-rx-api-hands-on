@@ -35,7 +35,7 @@ public class Part07Errors {
 //========================================================================================
 
     Mono<User> betterCallSaulForBogusMono(Mono<User> mono) {
-        return mono.onErrorReturn(SAUL);
+        return mono.onErrorResume(m -> Mono.just(SAUL));
     }
 
 //========================================================================================
